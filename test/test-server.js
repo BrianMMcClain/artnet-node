@@ -1,4 +1,6 @@
 var sys = require('util');
-var artnetsrv = require('../lib/ArtNetServer');
+var artnetsrv = require('../lib/artnet_server');
 
-var srv = artnetsrv.listen('127.0.0.1', 6465);
+var srv = artnetsrv.listen('127.0.0.1', 6454, function(msg, peer) {
+	console.log(msg.toString());
+});

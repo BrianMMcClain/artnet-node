@@ -1,5 +1,11 @@
 var artnetsrv = require('../lib/artnet_server');
 
 var srv = artnetsrv.listen('127.0.0.1', 6454, function(msg, peer) {
-	console.log("Received a data packet of length " + msg.length + ": " + msg.data);
+	console.log("-----------------");
+	console.log("Sequence: " + msg.sequence);
+	console.log("Physical: " + msg.physical);
+	console.log("Universe: " + msg.universe);
+	console.log("Length: " + msg.length);
+	console.log("Data: " + msg.data);
+	console.log("-----------------");
 });

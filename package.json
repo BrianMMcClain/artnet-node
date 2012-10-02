@@ -1,6 +1,6 @@
 {
   "name": "artnet-node",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Brian McClain <brianmmcclain@gmail.com",
   "description": "Art-Net server and client module for Node.JS",
   "contributors": [ 
@@ -13,7 +13,7 @@
         "email": "xandy@hackerspace-bamberg.de"
     }
   ],
-  "main": "./lib/artnet_client.js",
+  "main": "./main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ydnax/artnet-node.git"

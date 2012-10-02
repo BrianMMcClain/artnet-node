@@ -24,7 +24,6 @@
     "client"
   ],
   "dependencies" : {
-    "unix-dgram"   :  "0.0.x"
   }, 
   "engines": {
     "node": ">=0.6"

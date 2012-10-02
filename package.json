@@ -1,0 +1,33 @@
+{
+  "name": "artnet-node",
+  "preferGlobal": "false",
+  "version": "0.0.1",
+  "author": "Brian McClain <brianmmcclain@gmail.com",
+  "description": "Art-Net server and client module for Node.JS",
+  "contributors": [ 
+    {
+      "name": "Brian McClain",
+      "email": "brianmmcclain@gmail.com"
+    },
+    {
+        "name": "xandy",
+        "email": "xandy@hackerspace-bamberg.de"
+    }
+  ],
+  "main": "./lib/artnet_client.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ydnax/artnet-node.git"
+  },
+  "keywords": [
+    "dmx",
+    "artnet",
+    "client"
+  ],
+  "dependencies" : {
+    "dgram"   :  "0.0.x"
+  }, 
+  "engines": {
+    "node": ">=0.6"
+  }
+}

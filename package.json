@@ -1,6 +1,5 @@
 {
   "name": "artnet-node",
-  "preferGlobal": "false",
   "version": "0.0.1",
   "author": "Brian McClain <brianmmcclain@gmail.com",
   "description": "Art-Net server and client module for Node.JS",

@@ -11,6 +11,10 @@
     {
         "name": "xandy",
         "email": "xandy@hackerspace-bamberg.de"
+    },
+    {
+      "name": "Markus Chmelar",
+      "email": "markus.chmelar@innovaptor.com"      
     }
   ],
   "main": "./main.js",
@@ -24,6 +28,7 @@
     "client"
   ],
   "dependencies" : {
+    "jspack": "0.0.4"
   }, 
   "engines": {
     "node": ">=0.6"

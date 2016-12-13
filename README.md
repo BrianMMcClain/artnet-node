@@ -27,12 +27,12 @@ console.log('Server Started.');
 
 Client:
 ```
-const Client = require('artnet-node').Client;
+const Client = require('../main').Client;
 const client = new Client('127.0.0.1', 6454);
 
-client.send(createBuffer(1));
-setTimeout(() => client.send(createBuffer(3)), 500);
-setTimeout(() => client.send(createBuffer(50)), 1000);
+client.send(0, createBuffer(1));
+setTimeout(() => client.send(0, createBuffer(3)), 500);
+setTimeout(() => client.send(0, createBuffer(50)), 1000);
 setTimeout(() => client.close(), 1500);
 
 function createBuffer(length) {
@@ -49,5 +49,8 @@ function createBuffer(length) {
 }
 ```
 
+Client tested on [Enttec Pixelator](http://www.enttec.com/index.php?main_menu=Products&pn=70060)
+
+![Pixelator Enntec test](./image.jpg?raw=true)
 
 Forked from [https://github.com/BrianMMcClain/artnet-node](https://github.com/BrianMMcClain/artnet-node)

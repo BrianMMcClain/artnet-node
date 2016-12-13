@@ -1,7 +1,8 @@
 'use strict';
 
 const Client = require('../main').Client;
-const client = new Client('127.0.0.1', 6454);
+// const client = new Client('127.0.0.1', 6454);
+const client = new Client('192.168.1.98', 6454);
 
 client.send(0, createBuffer(1));
 setTimeout(() => client.send(0, createBuffer(3)), 500);

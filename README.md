@@ -10,42 +10,39 @@ Using es6 syntax and newer version of NodeJS (6.9.1).
 
 Server:
 ```
-const Server = require('artnet-node').Server;
-const server = Server.listen(6454, (msg, peer) => {
-  console.log("-----------------");
-	console.log("Sequence: " + msg.sequence);
-	console.log("Physical: " + msg.physical);
-	console.log("Universe: " + msg.universe);
-	console.log("Length: " + msg.length);
-	console.log("Data length: " + msg.data.length);
-	console.log("-----------------");
-  // console.log(msg);
-  // msg.data.forEach((item, index) => console.log(index, item));
-});
-console.log('Server Started.');
+const Server = require('../main').Server
+
+Server.listen(6454, (msg, peer) => {
+  console.log('-----------------')
+  console.log('Sequence: ' + msg.sequence)
+  console.log('Physical: ' + msg.physical)
+  console.log('Universe: ' + msg.universe)
+  console.log('Length: ' + msg.length)
+  console.log('Data length: ' + msg.data.length)
+})
 ```
 
 Client:
 ```
-const Client = require('../main').Client;
-const client = new Client('127.0.0.1', 6454);
+const Client = require('../main').Client
+const client = new Client('192.168.1.213', 6454)
 
-client.send(0, createBuffer(1));
-setTimeout(() => client.send(0, createBuffer(3)), 500);
-setTimeout(() => client.send(0, createBuffer(50)), 1000);
-setTimeout(() => client.close(), 1500);
+client.send(26, createBuffer(1))
+setTimeout(() => client.send(0, createBuffer(3)), 500)
+setTimeout(() => client.send(15, createBuffer(50)), 1000)
+setTimeout(() => client.close(), 1500)
 
-function createBuffer(length) {
+function createBuffer (length) {
   // each led will receive and RGB so 3 values per led.
-  length *= 3;
-  console.log('creating buffer with length:', length);
-  const data = new Uint8Array(length);
-  for(let i = 0; i < length; i += 3) {
-    data[i]     = Math.round(Math.random() * 255); // Red
-    data[i + 1] = Math.round(Math.random() * 255); // Green
-    data[i + 2] = Math.round(Math.random() * 255); // Blue
+  length *= 3
+  console.log('creating buffer with length:', length)
+  const data = new Uint8Array(length)
+  for (let i = 0; i < length; i += 3) {
+    data[i] = Math.round(Math.random() * 255) // Red
+    data[i + 1] = Math.round(Math.random() * 255) // Green
+    data[i + 2] = Math.round(Math.random() * 255) // Blue
   }
-  return data;
+  return data
 }
 ```
 
